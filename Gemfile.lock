@@ -41,6 +41,7 @@ GEM
     autoprefixer-rails (6.1.0.1)
       execjs
       json
+    bcrypt (3.1.10)
     bh (1.3.4)
       actionpack
       activesupport
@@ -49,6 +50,7 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    buftok (0.2.0)
     builder (3.2.2)
     byebug (8.2.0)
     capybara (2.5.0)
@@ -81,11 +83,21 @@ GEM
       rails (>= 3, < 5)
     database_cleaner (1.5.1)
     debug_inspector (0.0.2)
+    devise (3.5.2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    domain_name (0.5.25)
+      unf (>= 0.0.5, < 1.0.0)
     dotenv (2.0.2)
     dotenv-rails (2.0.2)
       dotenv (= 2.0.2)
       railties (~> 4.0)
+    equalizer (0.0.10)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -136,11 +148,21 @@ GEM
       rails (~> 4.2)
       thor
     hashdiff (0.2.3)
+    hashie (3.4.3)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
       haml (~> 4.0.0)
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
+    http (0.9.8)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 1.0.1)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    http-form_data (1.0.1)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -160,6 +182,8 @@ GEM
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
     meta-tags (2.1.0)
       actionpack (>= 3.0.0)
     method_source (0.8.2)
@@ -170,12 +194,24 @@ GEM
     multi_json (1.11.2)
     multi_test (0.1.2)
     multipart-post (2.0.0)
+    naught (1.1.0)
     nenv (0.2.0)
     nokogiri (1.6.6.3)
       mini_portile (~> 0.6.0)
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oauth (0.4.7)
+    omniauth (1.2.2)
+      hashie (>= 1.2, < 4)
+      rack (~> 1.0)
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-twitter (1.2.1)
+      json (~> 1.3)
+      omniauth-oauth (~> 1.1)
+    orm_adapter (0.5.0)
     pg (0.18.2)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -260,6 +296,7 @@ GEM
       rdoc (~> 4.0)
     sexp_processor (4.6.0)
     shellany (0.0.1)
+    simple_oauth (0.3.1)
     slop (3.6.0)
     spring (1.4.2)
     spring-commands-cucumber (1.0.1)
@@ -276,12 +313,28 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
+    twitter (5.15.0)
+      addressable (~> 2.3)
+      buftok (~> 0.2.0)
+      equalizer (= 0.0.10)
+      faraday (~> 0.9.0)
+      http (>= 0.4, < 0.10)
+      http_parser.rb (~> 0.6.0)
+      json (~> 1.8)
+      memoizable (~> 0.4.0)
+      naught (~> 1.0)
+      simple_oauth (~> 0.3.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.1)
     vcr (3.0.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -305,6 +358,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   cucumber-rails
   database_cleaner
+  devise (~> 3.4)
   dotenv-rails
   factory_girl_rails
   faker
@@ -318,6 +372,8 @@ DEPENDENCIES
   launchy
   meta-tags
   modernizr-rails
+  omniauth
+  omniauth-twitter
   pg
   puma
   quiet_assets
@@ -333,6 +389,7 @@ DEPENDENCIES
   spring-commands-cucumber
   spring-commands-rspec
   sqlite3
+  twitter
   uglifier (>= 1.3.0)
   vcr
   web-console (~> 2.0)
