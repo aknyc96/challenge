@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'gibbon'
-gem 'dotenv-rails', :groups => [:development]
+gem 'gibbon' , '1.2.0'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -86,7 +86,7 @@ gem 'modernizr-rails'
 gem 'meta-tags', require: 'meta_tags'
 gem 'responders', '~> 2.0'
 gem 'bh'
-gem 'gibbon'
+
 gem 'devise', '~> 3.4'
 gem 'omniauth'
 gem 'omniauth-twitter'
