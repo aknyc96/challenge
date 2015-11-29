@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'gibbon' , '1.2.0'
-
+gem 'gibbon',  '~>1.2.0'
+gem 'dotenv-rails', :groups => [:development]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 
 
+gem 'nokogiri' ,'1.6.6.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -69,7 +70,7 @@ group :development, :test do
   gem 'launchy'
   gem 'vcr'
   gem 'faker'
-  gem 'dotenv-rails'
+
   gem 'rdiscount'
 end
 
